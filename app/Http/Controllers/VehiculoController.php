@@ -15,7 +15,7 @@ class VehiculoController extends Controller
     }
     public function registrarvehiculo(){
         $data = request()->validate([
-            'placa' => ['required'],
+            'placa' => ['required','regex:/([a-z])(-)([0-9])/'],
             'marca' => ['required'],
         ]);// [
             //'placa.required' => 'Se deben llenar todos los campos',
