@@ -17,10 +17,10 @@ class VehiculoController extends Controller
         $data = request()->validate([
             'placa' => ['required'],
             'marca' => ['required'],
-        ], [
-            'placa.required' => 'Se deben llenar todos los campos',
-            'marca.required' => 'Se deben llenar todos los campos'
-        ]);
+        ]);// [
+            //'placa.required' => 'Se deben llenar todos los campos',
+            //'marca.required' => 'Se deben llenar todos los campos'
+        //]);
         Vehiculo::create([
             'placa'=>$data['placa'],
             'marca'=>$data['marca'],

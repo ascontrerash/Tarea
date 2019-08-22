@@ -11,10 +11,11 @@ class PersonaController extends Controller
         $data = request()->validate([
             'cedula' => ['required'],
             'nombre' => ['required'],
-        ], [
-            'cedula.required' => 'Se deben llenar todos los campos',
-            'nombre.required' => 'Se deben llenar todos los campos'
         ]);
+            //[
+            //'cedula.required' => 'Se deben llenar todos los campos',
+            //'nombre.required' => 'Se deben llenar todos los campos'
+        //]);
         Persona::create([
             'cedula'=>$data['cedula'],
             'nombre'=>$data['nombre'],

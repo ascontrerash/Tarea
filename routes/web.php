@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/listar','VehiculoController@listar');
+
+Route::get('/registrar','VehiculoController@crearvehiculo');
+Route::post('/registrar','VehiculoController@registrarvehiculo','PersonaController@registrarpersona');
 
 Route::get('/{codigo}', function ($codigo) {
     if ($codigo == 'A765'){
@@ -20,7 +24,4 @@ Route::get('/{codigo}', function ($codigo) {
     }
 });
 
-Route::get('/listar','VehiculoController@listar');
 
-Route::get('/','');
-Route::post('/registrar','VehiculoController@registrar','PersonaController@registrar');
