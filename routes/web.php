@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/{codigo}', function ($codigo) {
+    if ($codigo == 'A765'){
+        return view('welcome');
+    }
+    else{
+        return "Zona Prohibida";
+    }
 });
+
+Route::get('/listar','VehiculoController@listar');
+
+Route::get('/','');
+Route::post('/registrar','VehiculoController@registrar','PersonaController@registrar');
